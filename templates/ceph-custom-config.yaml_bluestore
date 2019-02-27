@@ -1,0 +1,28 @@
+parameter_defaults:
+  CephConfigOverrides:
+    mon_max_pg_per_osd: 3072
+    journal_size: 5120
+    osd_pool_default_size: 3
+    osd_pool_default_min_size: 2
+    osd_pool_default_pg_num: 128
+    osd_pool_default_pgp_num: 128
+  CephAnsibleDisksConfig:
+    osd_scenario: lvm
+    osd_objectstore: bluestore
+    devices:
+      - /dev/sdb
+      - /dev/sdc
+      - /dev/sdd
+      - /dev/sde
+      - /dev/sdf
+  CephPools:
+    - {"name": .rgw.root, "pg_num": 16, "pgp_num": 16, "application": rados}
+    - {"name": default.rgw.control, "pg_num": 16, "pgp_num": 16, "application": rados}
+    - {"name": default.rgw.meta, "pg_num": 16, "pgp_num": 16, "application": rados}
+    - {"name": default.rgw.log, "pg_num": 16, "pgp_num": 16, "application": rados}
+    - {"name": images, "pg_num": 128, "pgp_num": 128, "application": rbd}
+    - {"name": metrics, "pg_num": 16, "pgp_num": 16, "application":openstack_gnocchi}
+    - {"name": backups, "pg_num": 16, "pgp_num": 16, "application": rbd}
+    - {"name": vms, "pg_num": 512, "pgp_num": 512, "application": rbd}
+    - {"name": volumes, "pg_num": 256, "pgp_num": 256, "application": rbd}
+  CephPoolDefaultPgNum: 128

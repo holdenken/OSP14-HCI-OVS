@@ -1,0 +1,38 @@
+resource_registry:
+  OS::TripleO::Controller::Net::SoftwareConfig: /home/stack/templates/nic-configs/controller.yaml
+  OS::TripleO::ComputeHCI::Net::SoftwareConfig: /home/stack/templates/nic-configs/computehci.yaml
+  OS::TripleO::Compute::Net::SoftwareConfig: /home/stack/templates/nic-configs/compute.yaml
+
+parameter_defaults:
+  NeutronBridgeMappings: 'datacentre:br-ex,provider:br-provider'
+  NeutronFlatNetworks: 'datacentre,provider'
+  NeutronNetworkVLANRanges: 'datacentre:1:100,provider:400:1000'
+  NeutronNetworkType: 'vxlan,vlan,flat'
+  NeutronTunnelType: 'vxlan'
+  NeutronExternalNetworkBridge: "''"
+
+  # enable isolated metadata agent on controllers
+  # https://access.redhat.com/solutions/2292841
+  # Enable isolated Neutron metadata (allow metadata server in provider networks)
+  NeutronEnableIsolatedMetadata: true
+
+  # DHCP provide metadata route to VM
+  # NeutronEnableForceMetadata: true
+
+  # Set Jumbo MTU for tenant networks
+  NeutronGlobalPhysnetMtu: 8896
+
+  # DNS
+  DnsServers: ['192.168.1.249', '192.168.0.250']
+  CloudName: overcloud.lab.lan
+  CloudDomain: lab.lan
+
+  # Bonding options (only active/backup works in a virtual environment)
+  BondInterfaceOvsOptions: 'mode=802.3ad lacp_rate=1 updelay=1000 miimon=100'
+
+  # Global DNS name for instances
+  NeutronDnsDomain: lab.lan
+  NeutronPluginExtensions: "qos,port_security,dns"
+  ControllerExtraConfig:
+    neutron::agents::dhcp::dnsmasq_local_resolv: true
+    neutron::agents::dhcp::enable_isolated_metadata: true

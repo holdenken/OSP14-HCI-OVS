@@ -1,0 +1,17 @@
+parameter_defaults:
+  ControllerSchedulerHints:
+    'capabilities:node': 'controller-%index%'
+  ComputeSchedulerHints:
+    'capabilities:node': 'compute-%index%'
+  ComputeHCISchedulerHints:
+    'capabilities:node': 'ceph-%index%'
+
+  HostnameMap:
+    overcloud-controller-0: controller1
+    overcloud-controller-1: controller2
+    overcloud-controller-2: controller3
+    overcloud-compute-0: compute1
+    overcloud-computehci-0: hci1
+    overcloud-computehci-1: hci2
+    overcloud-computehci-2: hci3
+    overcloud-computehci-3: hci4

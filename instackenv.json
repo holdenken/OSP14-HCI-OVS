@@ -1,0 +1,68 @@
+{
+ "nodes": [
+   {
+     "name": "cloudbox0",
+     "capabilities": "node:ceph-0,boot_option:local",
+     "pm_user": "configadm",
+     "pm_password": "redhat123",
+     "pm_addr": "192.168.1.240",
+     "pm_type": "pxe_ipmitool"
+   },
+   {
+     "name": "cloudbox1",
+     "capabilities": "node:ceph-1,boot_option:local",
+     "pm_user": "configadm",
+     "pm_password": "redhat123",
+     "pm_addr": "192.168.1.241",
+     "pm_type": "pxe_ipmitool"
+   },
+   {
+     "name": "cloudbox3",
+     "capabilities": "node:ceph-2,boot_option:local",
+     "pm_user": "configadm",
+     "pm_password": "redhat123",
+     "pm_addr": "192.168.1.243",
+     "pm_type": "pxe_ipmitool"
+   },
+   {
+     "name": "cloudbox4",
+     "capabilities": "node:ceph-3,boot_option:local",
+     "pm_user": "configadm",
+     "pm_password": "redhat123",
+     "pm_addr": "192.168.1.244",
+     "pm_type": "pxe_ipmitool"
+   },
+   {
+     "name": "cloudbox2",
+     "capabilities": "node:compute-0,boot_option:local",
+     "pm_user": "configadm",
+     "pm_password": "redhat123",
+     "pm_addr": "192.168.1.242",
+     "pm_type": "pxe_ipmitool"
+   },
+   {
+     "name": "cloudbox6",
+     "capabilities": "node:controller-0,boot_option:local",
+     "pm_user": "configadm",
+     "pm_password": "redhat123",
+     "pm_addr": "192.168.1.246",
+     "pm_type": "pxe_ipmitool"
+   },
+   {
+     "name": "cloudbox7",
+     "capabilities": "node:controller-1,boot_option:local",
+     "pm_user": "configadm",
+     "pm_password": "redhat123",
+     "pm_addr": "192.168.1.247",
+     "pm_type": "pxe_ipmitool"
+   },
+   {
+     "name": "cloudbox8",
+     "capabilities": "node:controller-2,boot_option:local",
+     "pm_user": "configadm",
+     "pm_password": "redhat123",
+     "pm_addr": "192.168.1.248",
+     "pm_type": "pxe_ipmitool"
+   }
+   ]
+}

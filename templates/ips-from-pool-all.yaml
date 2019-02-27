@@ -1,0 +1,88 @@
+# Environment file demonstrating how to pre-assign IPs to all node types
+resource_registry:
+  OS::TripleO::Controller::Ports::ExternalPort: /usr/share/openstack-tripleo-heat-templates/network/ports/external_from_pool.yaml
+  OS::TripleO::Controller::Ports::InternalApiPort: /usr/share/openstack-tripleo-heat-templates/network/ports/internal_api_from_pool.yaml
+  OS::TripleO::Controller::Ports::StoragePort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage_from_pool.yaml
+  OS::TripleO::Controller::Ports::StorageMgmtPort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage_mgmt_from_pool.yaml
+  OS::TripleO::Controller::Ports::TenantPort: /usr/share/openstack-tripleo-heat-templates/network/ports/tenant_from_pool.yaml
+
+  OS::TripleO::Compute::Ports::ExternalPort: /usr/share/openstack-tripleo-heat-templates/network/ports/external_from_pool.yaml
+  OS::TripleO::Compute::Ports::InternalApiPort: /usr/share/openstack-tripleo-heat-templates/network/ports/internal_api_from_pool.yaml
+  OS::TripleO::Compute::Ports::StoragePort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage_from_pool.yaml
+  OS::TripleO::Compute::Ports::StorageMgmtPort: /usr/share/openstack-tripleo-heat-templates/network/ports/noop.yaml
+  OS::TripleO::Compute::Ports::TenantPort: /usr/share/openstack-tripleo-heat-templates/network/ports/tenant_from_pool.yaml
+
+  OS::TripleO::ComputeHCI::Ports::ExternalPort: /usr/share/openstack-tripleo-heat-templates/network/ports/external_from_pool.yaml
+  OS::TripleO::ComputeHCI::Ports::InternalApiPort: /usr/share/openstack-tripleo-heat-templates/network/ports/internal_api_from_pool.yaml
+  OS::TripleO::ComputeHCI::Ports::StoragePort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage_from_pool.yaml
+  OS::TripleO::ComputeHCI::Ports::StorageMgmtPort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage_mgmt_from_pool.yaml
+  OS::TripleO::ComputeHCI::Ports::TenantPort: /usr/share/openstack-tripleo-heat-templates/network/ports/tenant_from_pool.yaml
+
+parameter_defaults:
+  ControllerIPs:
+    external:
+    - 192.168.1.21
+    - 192.168.1.22
+    - 192.168.1.23
+    internal_api:
+    - 172.16.4.21
+    - 172.16.4.22
+    - 172.16.4.23
+    storage:
+    - 172.16.6.21
+    - 172.16.6.22
+    - 172.16.6.23
+    storage_mgmt:
+    - 172.16.7.21
+    - 172.16.7.22
+    - 172.16.7.23
+    tenant:
+    - 172.16.3.21
+    - 172.16.3.22
+    - 172.16.3.23
+    ctlplane:
+    - 10.1.1.21
+    - 10.1.1.22
+    - 10.1.1.23
+  ComputeIPs:
+    external:
+    - 192.168.1.24
+    internal_api:
+    - 172.16.4.24
+    storage:
+    - 172.16.6.24
+    tenant:
+    - 172.16.3.24
+    ctlplane:
+    - 10.1.1.24
+  ComputeHCIIPs:
+    external:
+    - 192.168.1.28
+    - 192.168.1.29
+    - 192.168.1.30
+    - 192.168.1.31
+    internal_api:
+    - 172.16.4.28
+    - 172.16.4.29
+    - 172.16.4.30
+    - 172.16.4.31
+    storage:
+    - 172.16.6.28
+    - 172.16.6.29
+    - 172.16.6.30
+    - 172.16.6.31
+    storage_mgmt:
+    - 172.16.7.28
+    - 172.16.7.29
+    - 172.16.7.30
+    - 172.16.7.31
+    tenant:
+    - 172.16.3.28
+    - 172.16.3.29
+    - 172.16.3.30
+    - 172.16.3.31
+    ctlplane:
+    - 10.1.1.28
+    - 10.1.1.29
+    - 10.1.1.30
+    - 10.1.1.31

@@ -1,0 +1,50 @@
+# *******************************************************************
+# This file was created automatically by the sample environment
+# generator. Developers should use `tox -e genconfig` to update it.
+# Users are recommended to make changes to a copy of the file instead
+# of the original, if any customizations are needed.
+# *******************************************************************
+# title: Inject SSL Trust Anchor on Overcloud Nodes
+# description: |
+#   When using an SSL certificate signed by a CA that is not in the default
+#   list of CAs, this environment allows adding a custom CA certificate to
+#   the overcloud nodes.
+parameter_defaults:
+  # Map containing the CA certs and information needed for deploying them.
+  # Type: json
+  CAMap:
+    director14:
+      content: |
+        -----BEGIN CERTIFICATE-----
+        MIIFtzCCA5+gAwIBAgIJALIgNZuIJmd9MA0GCSqGSIb3DQEBCwUAMHIxCzAJBgNV
+        BAYTAlVTMREwDwYDVQQIDAhEZWxhd2FyZTETMBEGA1UEBwwKTWlkZGxldG93bjEQ
+        MA4GA1UECgwHUmVkIEhhdDEMMAoGA1UECwwDTGFiMRswGQYDVQQDDBJkaXJlY3Rv
+        cjE0LmxhYi5sYW4wHhcNMTkwMTExMTczMTEwWhcNMzkwMTA2MTczMTEwWjByMQsw
+        CQYDVQQGEwJVUzERMA8GA1UECAwIRGVsYXdhcmUxEzARBgNVBAcMCk1pZGRsZXRv
+        d24xEDAOBgNVBAoMB1JlZCBIYXQxDDAKBgNVBAsMA0xhYjEbMBkGA1UEAwwSZGly
+        ZWN0b3IxNC5sYWIubGFuMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA
+        vBfFy/Rg0d2q1+hXx0qCZJfsN9UPftIcfxVzw9z7ttb3xLe8LIYCNiV9QfsllC4X
+        lN34RuBMWn5s7ZcX2qfEjwvP5Xf29P4EaaujyCsknEW4U3Jr2cgr1nm9c1WjcLJ/
+        O0+NWsKxabQuVHG+nSKFZwaF8NIGlxvdfsfJF9yJXVUzdoX6ooSWFzEaoLrUVWVj
+        m3bF1hK9EUj1GkxjZ8StenPBSpZR5rHRzvHeNOCyG282vp06INtBV5ufb8tTocoy
+        nIisWvhkIv9ZojDfEg+lnDX6LJSEbNE+5X6xoQdlWbC9YjGEJ193UIFfc5489/bd
+        7XKAn/czfQ7SoRGN3GpLEVYTYf3Aizj/7lI1Nx6iM3jM+mGQ5Cmba46isk3DPSM0
+        0J4Yn1CQK01znx3JrI0EcpBDJAqcQgvvhod/hiQZjZw9chgLBQF8TVJeK6pVf7U8
+        7sWnRMv+R+CWqW5D2M8XqYtBaEM3GifVA5vl0jvYP6xPSpcw2FapVR0QIU2J4AL1
+        CpNiDkGrSMqmUiZ2p9oFWNSiJJkFgq++MxlLTBcF3pWi7BxI44boPN+pxJq4MmHy
+        24Cbkrei/ryTKm1dzklwFUIx34JIPIOTmeOYUWhwJbtrF82bfBEvPqn6AmFsS3nT
+        wjdF/OiT/70jkWlo+sPgFNfIuZR+K90vFlXohPZIazsCAwEAAaNQME4wHQYDVR0O
+        BBYEFGfFzrNo/NnGIzmMzW/JFsDbzJCrMB8GA1UdIwQYMBaAFGfFzrNo/NnGIzmM
+        zW/JFsDbzJCrMAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQELBQADggIBAIPvVI9B
+        Y5H9wmMPWOPvzgEBG65UO7caVByNBQMmocW4UF9doK93FUEQUUps0hlagyTj4cBD
+        t8rSg2AtCZIwGLaSc1qarLna/FJYjk3dhcBciTJ36fAsPK1PTs/xcYG2SUsBkQox
+        a7h9i5YBUPp/9zj39RnB5vISTt0CtUlLEXqpFNa0ImRjDsfUdCEOSIIofVFv1+1p
+        0y+TsFwiTmfRGd5kkL+UE3NjVfMn2sslg5hgPsLuImEN5DqDUb4/9kd9qFcijt2N
+        PAXSIJDWEPHN2LNHrgX07hicnlrEgVouVNztt8gzNFdlksIlmT12vIIR+i4YOVCG
+        6JOsUYCbonPb+jWubCaC6ZH620qZdEXb4naG1YA0o7LPzKk6NRiIBAcnPNZi4KL5
+        hkAXuXqqmbG6DyoL9UPLNCcjAH0qwY/0v1IyIl3YYQAAXGdiyVusWrIu7VqsbCjl
+        HryLCM8/zVN/hVc2KUBW6AjG+JPzKacWN3FSWpZaUoPYsm5fBi939K1AfnX7gkCI
+        ZfAlnjm3QYQlk5gbE2BhlAqpwyt3RLgdi0pL7xk3/6iLovchj0MiyF2k00HPl6zL
+        TXYN96PMU6CzDdqW5J8M/ig4wSDiHVViRURftZSGCd97U7xM2Tyhpk5KMQ800c3+
+        vOlhowAkGEWru2Nu0LKqH9VHziWVx1CUTaWb
+        -----END CERTIFICATE-----
